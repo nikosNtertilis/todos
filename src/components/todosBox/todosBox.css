@@ -1,0 +1,9 @@
+.todosBox{
+    display: flex;
+    width: 30%;
+    min-height: 100px;
+    margin: 1px;
+    padding: 0%;
+    border: 2px solid rgb(110, 110, 110);
+    
+}

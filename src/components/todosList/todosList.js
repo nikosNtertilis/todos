@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react'
+import TodosBox from '../todosBox';
+import './todosList.css'
 
 const TodosList =() => {
     const [todos, setTodos] = useState([])
 
+
+    const inputText = '';
+
+
     useEffect(() => {
         const fetchTodos = async () => {
-            const inputText= 1;
             const response = await fetch(
                 `https://jsonplaceholder.typicode.com/todos?${inputText}`
                 );
             const json = await response.json();
-            
+
             setTodos([...json]);
         }
 
@@ -18,15 +23,14 @@ const TodosList =() => {
     }, [todos])
 
     return (
-        <div>
+        <div className="todosList" id="todosList" >
             {todos.map(item => 
-            <div key={item.id}>
-                {item.title}
-            </div> )}
+                //todo: css flex box
+                <TodosBox item={item} key={item.id} />
+            )}
         </div>
     )
 }
 
 export default TodosList;
-
 

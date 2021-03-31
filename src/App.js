@@ -1,10 +1,10 @@
 import React from "react";
-import TodosList from "./components/todos";
+import TodosList from "./components/todosList";
 
 function App() {
   
   return (
-    <div>
+    <div id="app">
       <TodosList /> 
     </div>
   );
