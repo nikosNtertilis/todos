@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import TodosBox from '../todosBox';
+import { todosContext } from '../todosProvider';
 import './todosList.css'
 
 const TodosList =() => {
-    const [todos, setTodos] = useState([])
-
-
-    const inputText = '';
-
-
+ 
+    const {inputText, setInputText, todos, setTodos } = useContext(todosContext);
+    // const inputText = '';
     useEffect(() => {
         const fetchTodos = async () => {
             const response = await fetch(
                 `https://jsonplaceholder.typicode.com/todos?${inputText}`
                 );
             const json = await response.json();
-
             setTodos([...json]);
         }
 
@@ -25,7 +22,6 @@ const TodosList =() => {
     return (
         <div className="todosList" id="todosList" >
             {todos.map(item => 
-                //todo: css flex box
                 <TodosBox item={item} key={item.id} />
             )}
         </div>

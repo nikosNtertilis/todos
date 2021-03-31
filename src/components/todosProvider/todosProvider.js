@@ -1,16 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import todosContext from './todosContext';
 
-const { Provider } = useContext(todosContext);
+const { Provider } = todosContext;
 
-const TodosProvider = () => {
+const TodosProvider = (props) => {
 
+    const [inputText, setInputText] = useState("");
+    const [todos, setTodos] = useState([])
     
     return (
-        <Provider value={
-
-        }>
-
+        <Provider value={{
+            inputText, 
+            setInputText,
+            todos, 
+            setTodos,
+        }}>
+            {props.children}
         </Provider>
     )
 }

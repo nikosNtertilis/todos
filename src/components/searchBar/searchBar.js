@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { todosContext } from '../todosProvider';
 import './searchBar.css'
-
-
-
 
 const SearchBar = () => {
 
-    const [inputText, setInputText] = useState("");
-
+    const {inputText, setInputText, setTodos} = useContext(todosContext);
 
     const getData = (event) => {
-        setInputText(event.target.value);
+        setInputText(`title=${event.target.value}`);
+        
     };
 
     return (
