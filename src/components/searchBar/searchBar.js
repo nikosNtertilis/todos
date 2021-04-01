@@ -8,7 +8,7 @@ const SearchBar = () => {
 
     const getData = (event) => {
         event.target.value != ''
-        ? setInputText(`title=${event.target.value}`)
+        ? setInputText(event.target.value)
         : setInputText('')
         
     };

@@ -6,22 +6,27 @@ import './todosList.css'
 const TodosList =() => {
  
     const {inputText, setInputText, todos, setTodos } = useContext(todosContext);
-    // const inputText = '';
+    
     useEffect(() => {
         const fetchTodos = async () => {
             const response = await fetch(
-                `https://jsonplaceholder.typicode.com/todos?${inputText}`
+                `https://jsonplaceholder.typicode.com/todos`
                 );
             const json = await response.json();
             setTodos([...json]);
         }
-
+        
         fetchTodos();
     }, [todos])
 
+    
+    const filterItems = (arr, query) => {
+        return arr.filter(el => el.title.toLowerCase().indexOf(query.toLowerCase()) !== -1)
+    }
+    
     return (
         <div className="todosList" id="todosList" >
-            {todos.map(item => 
+            {filterItems(todos, inputText).map(item => 
                 <TodosBox item={item} key={item.id} />
             )}
         </div>
