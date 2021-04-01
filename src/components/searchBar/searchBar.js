@@ -7,13 +7,15 @@ const SearchBar = () => {
     const {inputText, setInputText, setTodos} = useContext(todosContext);
 
     const getData = (event) => {
-        setInputText(`title=${event.target.value}`);
+        event.target.value != ''
+        ? setInputText(`title=${event.target.value}`)
+        : setInputText('')
         
     };
 
     return (
         <div id="searchBar" className="searchBar">
-            <form>
+            <form className="bg-color-whitesmoke">
                 <label>
                     Search todos:
                     <input type="text" name="searchBarInput" onChange={getData} />

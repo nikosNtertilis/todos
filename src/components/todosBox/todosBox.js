@@ -13,11 +13,11 @@ const TodosBox = ({item}) => {
     ? "not-completed"
     : "completed"
     return (
-        <div className="todosBox" id={item.id}>
-            <div>
+        <div className="todosBox border-radius" id={item.id}>
+            <div id ="title" className="title-padding">
                 {item.title}
             </div>
-            <div className={`${ifcompleted} align-bottom`}>
+            <div className={`${ifcompleted} todo-completed align-bottom align-text-center border-bottom `}>
                 {todoCompleted}
             </div>
         </div>
