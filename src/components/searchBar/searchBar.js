@@ -15,10 +15,10 @@ const SearchBar = () => {
 
     return (
         <div id="searchBar" className="searchBar">
-            <form className="bg-color-whitesmoke">
+            <form className="bg-color-whitesmoke input-form">
                 <label>
                     Search todos:
-                    <input type="text" name="searchBarInput" onChange={getData} />
+                    <input className="input-text" type="text" name="searchBarInput" onChange={getData} />
                 </label>
             </form>
         </div>
