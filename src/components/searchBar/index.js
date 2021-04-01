@@ -1,4 +1,4 @@
-import {SearchBar, inputText} from "./searchBar";
+import { SearchBar } from "./searchBar";
 
 export {
     SearchBar,

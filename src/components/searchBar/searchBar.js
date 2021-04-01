@@ -1,16 +1,15 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { todosContext } from '../todosProvider';
 import './searchBar.css'
 
 const SearchBar = () => {
 
-    const {inputText, setInputText, setTodos} = useContext(todosContext);
+    const {setInputText} = useContext(todosContext);
 
     const getData = (event) => {
         event.target.value != ''
         ? setInputText(event.target.value)
-        : setInputText('')
-        
+        : setInputText('')   
     };
 
     return (
