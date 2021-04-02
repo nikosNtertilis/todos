@@ -1,3 +1,6 @@
-import TodosBox from "./todosBox";
+import TodosBoxWithTodosCompleted from "./todosBox";
 
-export default TodosBox;
+export {
+    TodosBoxWithTodosCompleted,
+};
+

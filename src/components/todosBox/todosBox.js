@@ -1,30 +1,18 @@
 import React from 'react'
 import './todosBox.css'
+import withTodosCompleted from './withTodosCompleted';
 
-const TodosBox = ({item}) => {
-
-    const completed = "completed" ;
-
-    const todoCompleted = 
-    item.completed
-    ? completed
-    : "not completed"
-    
-    const ifcompleted = 
-    item.completed
-    ? completed
-    : "not-completed"
-    
-    return (
-        <div className="todosBox border-radius" id={item.id}>
-            <div id ="title" className="title-padding">
-                {item.title}
-            </div>
-            <div className={`${ifcompleted} todo-completed align-bottom align-text-center border-bottom `}>
-                {todoCompleted}
-            </div>
+const TodosBox = ({item, todoCompleted, ifcompleted}) => (
+    <div className="todosBox border-radius" id={item.id}>
+        <div id ="title" className="title-padding">
+            {item.title}
         </div>
-    )
-}
+        <div className={`${ifcompleted} todo-completed align-bottom align-text-center border-bottom `}>
+            {todoCompleted}
+        </div>
+    </div>
+);
 
-export default TodosBox
+const TodosBoxWithTodosCompleted = withTodosCompleted(TodosBox);
+
+export default TodosBoxWithTodosCompleted;
