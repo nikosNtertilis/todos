@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import { TodosBoxWithTodosCompleted } from '../todosBox';
+import { TodosBox } from '../todosBox';
 import { todosContext } from '../todosProvider';
 import './todosList.css'
 
@@ -17,7 +17,6 @@ const TodosList =() => {
 
     useEffect(() => {
         fetchTodos(url);
-        console.log(TodosBoxWithTodosCompleted);
     }, [])
 
     const filterItems = (arr, query) => {
@@ -28,7 +27,7 @@ const TodosList =() => {
     return (
         <div className="todosList" id="todosList" >
             {filterItems(todos, inputText).map(item => 
-                <TodosBoxWithTodosCompleted item={item} key={item.id} />
+                <TodosBox item={item} key={item.id} />
             )}
         </div>
     )

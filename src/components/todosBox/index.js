@@ -1,6 +1,6 @@
 import TodosBoxWithTodosCompleted from "./todosBox";
 
 export {
-    TodosBoxWithTodosCompleted,
+    TodosBoxWithTodosCompleted as TodosBox,
 };
 
