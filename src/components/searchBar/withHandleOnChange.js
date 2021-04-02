@@ -6,9 +6,7 @@ const WithHandleOnChange = (Component) =>(props) => {
     const {setInputText} = useContext(todosContext);
 
     const handleOnChange = (event) => {
-        event.target.value != ''
-        ? setInputText(event.target.value)
-        : setInputText('')   
+        setInputText(event.target.value)    
     }; 
 
     return <Component {...props} handleOnChange={handleOnChange} />;
