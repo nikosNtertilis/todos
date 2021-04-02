@@ -1,37 +1,28 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { TodosBox } from '../todosBox';
 import { todosContext } from '../todosProvider';
 import './todosList.css'
+import withFetch from './withFetch';
+import withFilterItemByTitle from './withFilterItemsByTitle';
 
-const TodosList =() => {
+const TodosList =({filterItemsByTitle}) => {
  
-    const {inputText, todos, setTodos } = useContext(todosContext);
+    const {inputText, todos} = useContext(todosContext);
 
-    const url = `https://jsonplaceholder.typicode.com/todos` ;
-
-    const fetchTodos = async (url) => {
-        const response = await fetch(url);
-        const json = await response.json();
-        setTodos([...json]);
-    }
-
-    useEffect(() => {
-        fetchTodos(url);
-    }, [])
-
-    const filterItems = (arr, query) => {
-        return arr.filter(el => el.title.toLowerCase().indexOf(query.toLowerCase()) !== -1)
-    }
-    
-    
     return (
         <div className="todosList" id="todosList" >
-            {filterItems(todos, inputText).map(item => 
+            {filterItemsByTitle(todos, inputText).map(item => 
                 <TodosBox item={item} key={item.id} />
             )}
         </div>
     )
 }
 
-export default TodosList;
+const url = `https://jsonplaceholder.typicode.com/todos` ;
+
+const TodosListWithFetchWithFilterItemByTitle =
+withFilterItemByTitle(
+    withFetch(TodosList, url)
+    );
+export default TodosListWithFetchWithFilterItemByTitle;
 

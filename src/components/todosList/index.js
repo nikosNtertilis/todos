@@ -1,3 +1,3 @@
-import TodosList from "./todosList";
+import TodosListWithFetchWithFilterItemByTitle from "./todosList";
 
-export default TodosList;
+export {TodosListWithFetchWithFilterItemByTitle as TodosList} ;
