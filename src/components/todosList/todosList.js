@@ -6,18 +6,18 @@ import './todosList.css'
 const TodosList =() => {
  
     const {inputText, todos, setTodos } = useContext(todosContext);
-    
+
+    const url = `https://jsonplaceholder.typicode.com/todos` ;
+
+    const fetchTodos = async (url) => {
+        const response = await fetch(url);
+        const json = await response.json();
+        setTodos([...json]);
+    }
+
     useEffect(() => {
-        const fetchTodos = async () => {
-            const response = await fetch(
-                `https://jsonplaceholder.typicode.com/todos`
-                );
-            const json = await response.json();
-            setTodos([...json]);
-        }
-        
-        fetchTodos();
-    }, [todos])
+        fetchTodos(url);
+    }, [])
 
     const filterItems = (arr, query) => {
         return arr.filter(el => el.title.toLowerCase().indexOf(query.toLowerCase()) !== -1)
