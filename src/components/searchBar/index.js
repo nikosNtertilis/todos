@@ -1,5 +1,6 @@
-import { SearchBar } from "./searchBar";
+import SearchBarWithHandleOnChange from "./searchBar";
 
-export {
-    SearchBar,
+export{
+    SearchBarWithHandleOnChange as SearchBar,
 }
+
