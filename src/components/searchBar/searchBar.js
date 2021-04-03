@@ -9,9 +9,13 @@ const SearchBar = ({handleOnChange, handleOnSubmit}) => {
     <div id="searchBar" className="searchBar">
         <form className="bg-color-whitesmoke input-form" onSubmit={handleOnSubmit}>
             <label>
-                Search todos:
+                search todos:
                 <input id="searchBarInput" className="input-text" type="text" name="searchBarInput" onChange={handleOnChange} />
             </label>
+            {/* <label>
+                completed:
+                <input id="searchBarCheckBox" className="input-checkBox" type="checkBox" name="searchBarCheckBox" />
+            </label> */}
         </form>
     </div>
 )}
