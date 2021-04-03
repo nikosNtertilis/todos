@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { urlJsonPlaceHolder as url } from "../../modules";
 import { todosContext } from "../todosProvider";
+import _ from 'lodash'
 
 const withHandleOnSubmit = (Component) => (props) => {
 
@@ -25,8 +26,11 @@ const withHandleOnSubmit = (Component) => (props) => {
         const fetchPostTodos = async (url, init) => {
             const response = await fetch(url, init)
             const json = await response.json();
-            todos.push(json)
-            setTodos(todos);
+            
+            const submitedTodo = _.clone(todos);
+            submitedTodo.push(json);
+
+            setTodos(submitedTodo);
         }
         
         fetchPostTodos(url, init);
