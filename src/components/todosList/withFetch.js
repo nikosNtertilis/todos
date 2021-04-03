@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { todosContext } from '../todosProvider';
 
-const url = `https://jsonplaceholder.typicode.com/todos` ;
-
 const withFetch = (Component, url) => (props) =>{
 
     const {setTodos} = useContext(todosContext);

@@ -4,6 +4,7 @@ import { todosContext } from '../todosProvider';
 import './todosList.css'
 import withFetch from './withFetch';
 import withFilterItemByTitle from './withFilterItemsByTitle';
+import { urlJsonPlaceHolder as url } from '../../modules';
 
 const TodosList =({filterItemsByTitle}) => {
  
@@ -17,8 +18,6 @@ const TodosList =({filterItemsByTitle}) => {
         </div>
     )
 }
-
-const url = `https://jsonplaceholder.typicode.com/todos` ;
 
 const TodosListWithFetchWithFilterItemByTitle =
 withFilterItemByTitle(

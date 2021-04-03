@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { todosContext } from '../todosProvider';
+import React from 'react'
 import './searchBar.css'
 import WithHandleOnChange from './withHandleOnChange';
 import withHandleOnSubmit from './withHandleOnSubmit';
