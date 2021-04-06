@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { TodosBox } from '../todosBox';
-import { todosContext } from '../todosProvider';
-import './todosList.css'
-import withFetch from './withFetch';
+import './todosList.css';
 import withFilterItemByTitle from './withFilterItemsByTitle';
 import { urlJsonPlaceHolder as url } from '../../modules';
 
-const TodosList =({filterItemsByTitle}) => {
+const TodosList =({filterItemsByTitle, inputText, todos}) => {
  
-    const {inputText, todos} = useContext(todosContext);
-
     return (
-        <div className="todosList" id="todosList" >
+        <div className="todosList" id="todosList">
             {filterItemsByTitle(todos, inputText).map(item => 
                 <TodosBox item={item} key={item.id} />
             )}
@@ -19,9 +15,5 @@ const TodosList =({filterItemsByTitle}) => {
     )
 }
 
-const TodosListWithFetchWithFilterItemByTitle =
-withFilterItemByTitle(
-    withFetch(TodosList, url)
-    );
-export default TodosListWithFetchWithFilterItemByTitle;
+export default withFilterItemByTitle(TodosList, url);
 

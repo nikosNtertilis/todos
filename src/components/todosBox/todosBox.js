@@ -1,13 +1,14 @@
-import React from 'react'
-import './todosBox.css'
-import withHandleOnClick from './withHandleOnClick';
+import React from 'react';
+import './todosBox.css';
 import withTodosCompleted from './withTodosCompleted';
 
-const TodosBox = ({item, todoCompleted, ifcompleted, handleOnClick}) => (
+const TodosBox = ({item, todoCompleted, ifcompleted}) => (
     <div className="todosBox border-radius" id={item.id}>
-        <div id ="title" className="title-padding">
+
+        <div id ="title" className="title-padding title-align title-size">
             {item.title}
         </div>
+        
         <div 
         id="isCompleted" 
         className={`
@@ -17,13 +18,10 @@ const TodosBox = ({item, todoCompleted, ifcompleted, handleOnClick}) => (
             align-text-center 
             border-bottom
         `}
-        onClick={handleOnClick}
         >
             {todoCompleted}
         </div>
     </div>
 );
 
-const TodosBoxWithTodosCompletedWithHandleOnClick = withHandleOnClick(withTodosCompleted(TodosBox));
-
-export default TodosBoxWithTodosCompletedWithHandleOnClick;
+export default withTodosCompleted(TodosBox);

@@ -1,47 +1,57 @@
-.todosBox{
-    display: flex;
-    width: 30%;
-    min-height: 100px;
-    margin: 1px;
-    padding: 0;
-    border: 2px solid rgb(110, 110, 110);
-    background-color: rgba(255, 255, 255, 1);
-    flex-direction: column;
-    justify-content: space-between;  
+.todosBox {
+  display: flex;
+  width: 30%;
+  min-height: 100px;
+  margin: 1px;
+  padding: 0;
+  border: 2px solid rgb(110, 110, 110);
+  background-color: rgba(255, 255, 255, 1);
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.todo-completed{
-    width: 96%;
-    height: auto;
-    padding: 0.5em 2%; 
+.todo-completed {
+  width: 96%;
+  height: auto;
+  padding: 0.5em 2%;
 }
 
-.completed{
-    background-color: rgba(63, 251, 63, 0.5);
+.completed {
+  background-color: rgba(63, 251, 63, 0.5);
 }
 
-.not-completed{
-    background-color: rgba(224, 62, 56, 0.5);
+.not-completed {
+  background-color: rgba(224, 62, 56, 0.5);
 }
 
-.align-bottom{
-    position:relative ;
-    bottom: 0;
+.align-bottom {
+  position: relative;
+  bottom: 0;
 }
 
-.align-text-center{
-    align-self: center;
-    text-align: center;
+.align-text-center {
+  align-self: center;
+  text-align: center;
 }
 
-.border-bottom{
-    border-bottom-right-radius: 0.9em 0.9em;
-    border-bottom-left-radius: 0.9em 0.9em;
+.border-bottom {
+  border-bottom-right-radius: 0.9em 0.9em;
+  border-bottom-left-radius: 0.9em 0.9em;
 }
 
-.border-radius{
-    border-radius: 1em / 1em;
+.border-radius {
+  border-radius: 1em / 1em;
 }
-.title-padding{
-    padding: 10px;
+.title-padding {
+  padding: 10px 3px 3px 10px;
+}
+
+.title-align {
+  justify-self: right;
+}
+
+.title-size {
+  width: auto;
+  max-width: 53%;
+  height: auto;
 }

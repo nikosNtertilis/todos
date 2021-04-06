@@ -7,9 +7,12 @@ const WithHandleOnChange = (Component) =>(props) => {
 
     const handleOnChange = (event) => {
         setInputText(event.target.value)    
-    }; 
+    };
+    const handleOnSubmit = event => {
+        event.preventDefault();
+    } 
 
-    return <Component {...props} handleOnChange={handleOnChange} />;
+    return <Component {...props} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />;
     
 }
 

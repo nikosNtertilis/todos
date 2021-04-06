@@ -1,6 +1,6 @@
-import SearchBarWithHandleOnChangeWithHandleOnSubmit from "./searchBar";
+import SearchBar from "./searchBar";
 
 export{
-    SearchBarWithHandleOnChangeWithHandleOnSubmit as SearchBar,
+    SearchBar,
 }
 

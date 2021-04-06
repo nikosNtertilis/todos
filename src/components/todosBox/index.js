@@ -1,6 +1,6 @@
-import TodosBoxWithTodosCompletedWithHandleOnClick from "./todosBox";
+import TodosBox from "./todosBox";
 
 export {
-    TodosBoxWithTodosCompletedWithHandleOnClick as TodosBox,
+    TodosBox,
 };
 
