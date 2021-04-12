@@ -1,6 +1,6 @@
 import React from 'react'
 import './searchBar.css'
-import WithHandleOnChange from './withHandleOnChange';
+import withHandleOnChange from './withHandleOnChange';
 
 const SearchBar = ({handleOnChange, handleOnSubmit}) => {
     return (
@@ -14,5 +14,5 @@ const SearchBar = ({handleOnChange, handleOnSubmit}) => {
     </div>
 )}
 
-export default WithHandleOnChange(SearchBar);
+export default withHandleOnChange(SearchBar);
 

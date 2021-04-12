@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { todosContext } from '../todosProvider';
 
-const WithHandleOnChange = (Component) =>(props) => {
+const withHandleOnChange = (Component) =>(props) => {
     
     const {setInputText} = useContext(todosContext);
 
@@ -16,6 +16,6 @@ const WithHandleOnChange = (Component) =>(props) => {
     
 }
 
-export default WithHandleOnChange;
+export default withHandleOnChange;
 
 
