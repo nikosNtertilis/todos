@@ -1,18 +1,17 @@
 import React, { useContext, useEffect } from "react"
+import {fetchTodos} from "../../models/fetchTodos";
 import { todosContext } from "../todosProvider";
 
-const withFilterItemByTitle = (Component, url) => (props) => {
+const withFilterItemByTitle = (Component) => (props) => {
 
     const {setTodos, inputText, todos} = useContext(todosContext);
 
-    const fetchTodos = async (url) => {
-        const response = await fetch(url);
-        const json = await response.json();
-        setTodos([...json]);
-    }
-
     useEffect(() => {
-        fetchTodos(url);
+
+        (async () => {
+            setTodos( await fetchTodos() );
+        })()
+
     }, [])
 
 	const filterItemsByTitle = (arr, query) => arr.filter(el => 

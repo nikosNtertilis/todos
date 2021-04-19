@@ -2,7 +2,6 @@ import React from 'react'
 import { TodosBox } from '../todosBox';
 import './todosList.css';
 import withFilterItemByTitle from './withFilterItemsByTitle';
-import { urlJsonPlaceHolder as url } from '../../modules';
 
 const TodosList =({filterItemsByTitle, inputText, todos}) => {
  
@@ -15,5 +14,5 @@ const TodosList =({filterItemsByTitle, inputText, todos}) => {
     )
 }
 
-export default withFilterItemByTitle(TodosList, url);
+export default withFilterItemByTitle(TodosList);
 
