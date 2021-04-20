@@ -1,13 +1,15 @@
-import React, { useContext } from 'react'
-import { todosContext } from '../todosProvider';
+import React from 'react'
+import { useDispatch } from 'react-redux';
+import { updateText } from "../../models/slices";
 
 const withHandleOnChange = (Component) =>(props) => {
     
-    const {setInputText} = useContext(todosContext);
+    const dispatch = useDispatch();
 
     const handleOnChange = (event) => {
-        setInputText(event.target.value)    
+        dispatch( updateText( event.target.value ) );    
     };
+
     const handleOnSubmit = event => {
         event.preventDefault();
     } 

@@ -1,17 +1,18 @@
-import React, { useContext, useEffect } from "react"
-import {fetchTodos} from "../../models/fetchTodos";
-import { todosContext } from "../todosProvider";
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectInputText, selectTodos } from "../../models/selectors";
+import { updateTodos } from "../../models/slices";
 
 const withFilterItemByTitle = (Component) => (props) => {
 
-    const {setTodos, inputText, todos} = useContext(todosContext);
+    const dispatch = useDispatch();
+
+    const todos = useSelector(selectTodos);
+    const inputText = useSelector(selectInputText);
 
     useEffect(() => {
-
-        (async () => {
-            setTodos( await fetchTodos() );
-        })()
-
+            dispatch(updateTodos())
     }, [])
 
 	const filterItemsByTitle = (arr, query) => arr.filter(el => 
