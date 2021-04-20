@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## mandatory installations
+
+redux toolkit
+
+### `npm install @reduxjs/toolkit`
+
+or
+
+### `yarn add @reduxjs/toolkit`
+
 ## Available Scripts
 
 In the project directory, you can run:
